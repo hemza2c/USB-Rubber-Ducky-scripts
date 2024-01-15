@@ -2,7 +2,7 @@
 These are three attack examples using USB Rubber ducky. Each attack has a process description, the attack objectives, and what this attack will compromise (Confidentiality, Integrity, Availability). All attacks are demonstrated in the demo video.
 Demo video link: https://drive.google.com/file/d/1LGZDMH8PWYl0N4D5zjK6A_FbCHO7DpX7/view?usp=sharing
 
-# Attack one: Bank account credentilas theft
+# Attack one: Bank account credentials theft
 The attack started with plugging a Rubber Ducky USB device into the Ubuntu machine (DHCP Server) with IP address 10.10.10.1/24. The Rubber Ducky USB was used to launch a – Script 1. that edited the configuration file of the DHCP server “/etc/dhcp/dhcpd.conf”. The script changed the DNS server information in the configuration file to point to the rogue DNS server on the Kali machine with IP address 10.10.10.99/24. After the configuration file was edited, the DHCP server began providing incorrect DNS server 
 information to the victim system (10.10.10.99 instead of 10.10.10.200). When the victim system (Windows 11) attempted to resolve the name “sgbank.com”, the requests were 
 redirected to the rogue DNS server. The rogue DNS server then responded with the IP address of a malicious website instead of the legitimate website the victim was attempting to access.
